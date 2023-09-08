@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
+import Mobile from './components/Mobile.vue'
 
 onMounted(() => {
-  document.body.className = 'font-poppins'
+  document.body.className = 'font-poppins bg-off-white'
 })
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center min-h-screen">
-    <p class="text-3xl font-bold underline">Hello world!</p>
-  </div>
+  <Mobile class="desktop:hidden"></Mobile>
 </template>
