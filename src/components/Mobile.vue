@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { content } from '../content';
-import Display from './Display.vue'
 
 </script>
 
