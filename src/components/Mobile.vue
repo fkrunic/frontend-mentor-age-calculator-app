@@ -59,9 +59,9 @@ import MobileDisplay from './MobileDisplay.vue'
 
     <!-- Display -->
     <div class="flex flex-col items-start pb-8">
-      <MobileDisplay :title="'years'" :amount="content.displays.year"></MobileDisplay>
-      <MobileDisplay :title="'months'" :amount="content.displays.month"></MobileDisplay>
-      <MobileDisplay :title="'days'" :amount="content.displays.day"></MobileDisplay>
+      <MobileDisplay :title="'years'" :amount="content.displays.years"></MobileDisplay>
+      <MobileDisplay :title="'months'" :amount="content.displays.months"></MobileDisplay>
+      <MobileDisplay :title="'days'" :amount="content.displays.days"></MobileDisplay>
     </div>
   </div>
 </template>

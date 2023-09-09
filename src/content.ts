@@ -4,9 +4,9 @@ export type Content =
   {
     inputs: Array<{title: string, placeholder: string}>,
     displays: {
-      year: Display,
-      month: Display, 
-      day: Display
+      years: Display,
+      months: Display, 
+      days: Display
     }
   }
 
@@ -26,8 +26,8 @@ export const content:Content = {
     }
   ],
   displays: {
-    year: '--',
-    month: '--',
-    day: '--'
+    years: '--',
+    months: '--',
+    days: '--'
   }
 }

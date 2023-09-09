@@ -54,9 +54,9 @@ import DesktopDisplay from './DesktopDisplay.vue'
 
       <!-- Display -->
       <div class="flex flex-col -mb-5">
-        <DesktopDisplay :title="'years'" :amount="content.displays.year"></DesktopDisplay>
-        <DesktopDisplay :title="'months'" :amount="content.displays.month"></DesktopDisplay>
-        <DesktopDisplay :title="'days'" :amount="content.displays.day"></DesktopDisplay>
+        <DesktopDisplay :title="'years'" :amount="content.displays.years"></DesktopDisplay>
+        <DesktopDisplay :title="'months'" :amount="content.displays.months"></DesktopDisplay>
+        <DesktopDisplay :title="'days'" :amount="content.displays.days"></DesktopDisplay>
       </div>
     </div>
   </div>
