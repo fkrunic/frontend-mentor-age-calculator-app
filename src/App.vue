@@ -134,15 +134,17 @@ const displayYears = (d: DisplayStatus): string => {
           absolute 
           p-4 
 
-          left-[7.5rem] 
-          -top-[1.8rem] 
+          top-1/2
+          left-1/2
+          -translate-x-1/2
+          -translate-y-1/2
           
           bg-purple         
           rounded-full
 
           desktop:p-6
           desktop:right-0
-          desktop:-top-12
+          desktop:translate-x-0
           desktop:left-auto
 
           hover:bg-off-black
