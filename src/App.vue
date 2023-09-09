@@ -2,7 +2,6 @@
 import { content } from './content';
 import Display from './components/Display.vue'
 import Entry from './components/Entry.vue'
-import SubmitButton from './components/SubmitButton.vue';
 
 import { onMounted } from 'vue';
 
@@ -73,7 +72,28 @@ onMounted(() => {
         border-[1px] 
         border-light-gray
         ">
-        <SubmitButton></SubmitButton>
+
+        <!-- Submit Button -->
+        <div class="
+          absolute 
+          p-4 
+
+          left-[7.5rem] 
+          -top-[1.8rem] 
+          
+          bg-purple         
+          rounded-full
+
+          desktop:p-6
+          desktop:right-0
+          desktop:-top-12
+          desktop:left-auto
+
+          hover:bg-off-black
+          hover:cursor-pointer
+          ">
+          <img class="w-6 h-6 desktop:w-12 desktop:h-12" src="./assets/icon-arrow.svg">
+        </div>
       </div>
 
       <!-- Display -->
