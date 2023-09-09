@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { content } from '../content';
 import DesktopDisplay from './DesktopDisplay.vue'
-import DesktopEntry from './DesktopEntry.vue'
+import Entry from './Entry.vue'
 import SubmitButton from './SubmitButton.vue';
 </script>
 
@@ -25,9 +25,9 @@ import SubmitButton from './SubmitButton.vue';
 
       <!-- Date Entry -->
       <div class="flex flex-row gap-8">
-        <DesktopEntry :title="'DAY'" :placeholder="'DD'"></DesktopEntry>
-        <DesktopEntry :title="'MONTH'" :placeholder="'MM'"></DesktopEntry>
-        <DesktopEntry :title="'YYYY'" :placeholder="'YYYY'"></DesktopEntry>
+        <Entry :title="'DAY'" :placeholder="'DD'"></Entry>
+        <Entry :title="'MONTH'" :placeholder="'MM'"></Entry>
+        <Entry :title="'YYYY'" :placeholder="'YYYY'"></Entry>
       </div>
 
       <!-- Divider -->

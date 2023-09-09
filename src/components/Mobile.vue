@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { content } from '../content';
 import MobileDisplay from './MobileDisplay.vue'
-import MobileEntry from './MobileEntry.vue'
+import Entry from './Entry.vue'
 import SubmitButton from './SubmitButton.vue';
 </script>
 
@@ -29,9 +29,9 @@ import SubmitButton from './SubmitButton.vue';
 
     <!-- Date Entry -->
     <div class="flex flex-row justify-between w-full">
-      <MobileEntry :title="'DAY'" :placeholder="'DD'"></MobileEntry>
-      <MobileEntry :title="'MONTH'" :placeholder="'MM'"></MobileEntry>
-      <MobileEntry :title="'YEAR'" :placeholder="'YYYY'"></MobileEntry>
+      <Entry :title="'DAY'" :placeholder="'DD'"></Entry>
+      <Entry :title="'MONTH'" :placeholder="'MM'"></Entry>
+      <Entry :title="'YEAR'" :placeholder="'YYYY'"></Entry>
     </div>
 
     <!-- Divider -->
