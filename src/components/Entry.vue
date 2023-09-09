@@ -57,6 +57,10 @@ const titleColor = (st: Status): string => {
         text-[7pt]
         italic 
         text-soft-red
+
+        desktop:top-[7.2rem]
+        desktop:text-[10pt]
+        desktop:w-40
         " v-if="status.kind === 'invalid'"
         >{{ status.err }}</p>      
   </div>  
