@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { Display } from '../app';
 defineProps<{
   title: string, 
-  amount: Display
+  amount: '--' | number
 }>()
 </script>
 

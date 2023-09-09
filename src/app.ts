@@ -1,25 +1,35 @@
-export type Display = '--' | number
+export type Display
+  = { kind: 'none' }
+  | { kind: 'some', delta: Delta }
 
-export type Content = 
-  {
-    displays: {
-      years: Display,
-      months: Display, 
-      days: Display
-    }
-  }
-
-export const content:Content = {
-  displays: {
-    years: '--',
-    months: '--',
-    days: '--'
-  }
+interface Delta {
+  years: number,
+  months: number,
+  days: number
 }
 
-export type Status
-  = { kind: 'valid' }
+export type InputStatus
+  = { kind: 'not-entered' }
+  | { kind: 'valid', delta: Delta }
   | { kind: 'invalid', err: string }
+
+interface State {
+  inputs: {
+    year: InputStatus,
+    month: InputStatus,
+    day: InputStatus
+  },
+  display: Display
+}
+
+export const initialState:State = {
+  inputs: {
+    year: { kind: 'not-entered' },
+    month: { kind: 'not-entered' },
+    day: { kind: 'not-entered' }
+  },
+  display: { kind: 'none' }
+}
 
 const isValidYear = (year: number): boolean => {
   const currentYear = new Date().getFullYear()

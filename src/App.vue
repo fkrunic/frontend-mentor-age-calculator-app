@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { content } from './app';
+import { initialState } from './app';
 import Display from './components/Display.vue'
 import Entry from './components/Entry.vue'
 
@@ -62,9 +62,9 @@ onMounted(() => {
         desktop:gap-8
         desktop:w-auto
         ">
-        <Entry :title="'DAY'" :placeholder="'DD'" :status="{ kind: 'invalid', err: 'This field is required' }"></Entry>
-        <Entry :title="'MONTH'" :placeholder="'MM'" :status="{ kind: 'invalid', err: 'This field is required' }"></Entry>
-        <Entry :title="'YEAR'" :placeholder="'YYYY'" :status="{ kind: 'invalid', err: 'This field is required' }"></Entry>
+        <Entry :title="'DAY'" :placeholder="'DD'" :status="initialState.inputs.year"></Entry>
+        <Entry :title="'MONTH'" :placeholder="'MM'" :status="initialState.inputs.month"></Entry>
+        <Entry :title="'YEAR'" :placeholder="'YYYY'" :status="initialState.inputs.day"></Entry>
       </div>
 
       <!-- Divider -->
@@ -112,9 +112,9 @@ onMounted(() => {
         desktop:-mb-5
         desktop:p-0
         ">
-        <Display :title="'years'" :amount="content.displays.years"></Display>
-        <Display :title="'months'" :amount="content.displays.months"></Display>
-        <Display :title="'days'" :amount="content.displays.days"></Display>
+        <Display :title="'years'" :amount="initialState.display.kind === 'none' ? '--' : initialState.display.delta.years"></Display>
+        <Display :title="'months'" :amount="initialState.display.kind === 'none' ? '--' : initialState.display.delta.months"></Display>
+        <Display :title="'days'" :amount="initialState.display.kind === 'none' ? '--' : initialState.display.delta.days"></Display>
       </div>
     </div>
   </div>
