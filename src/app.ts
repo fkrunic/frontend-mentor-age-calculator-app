@@ -1,4 +1,4 @@
-import { differenceInDays, differenceInMonths, differenceInYears } from 'date-fns'
+import { differenceInDays, differenceInMonths, differenceInYears, add } from 'date-fns'
 
 export type DisplayStatus
   = { kind: 'none' }
@@ -108,6 +108,19 @@ const dayStatus = (input: string): InputStatus => {
   }
 }
 
+const componentsBetween = (future: Date, past: Date): Delta => {
+  const yearsDelta = differenceInYears(future, past)
+  const yearStep = add(past, { years: yearsDelta })
+  const monthsDelta = differenceInMonths(future, yearStep)
+  const monthStep = add(yearStep, { months: monthsDelta })
+  const dayDelta = differenceInDays(future, monthStep)
+  return {
+    years: yearsDelta,
+    months: monthsDelta,
+    days: dayDelta
+  }
+}
+
 export const determineState = (input: { day: string, month: string, year: string }): State => {
   const firstPassUpdate = {
     year: yearStatus(input.year),
@@ -142,11 +155,7 @@ export const determineState = (input: { day: string, month: string, year: string
         inputs: firstPassUpdate,
         display: {
           kind: 'some',
-          delta: {
-            years: differenceInYears(currentDate, proposedDate),
-            months: differenceInMonths(currentDate, proposedDate),
-            days: differenceInDays(currentDate, proposedDate)
-          } as Delta
+          delta: componentsBetween(currentDate, proposedDate)
         }
       }
     }
