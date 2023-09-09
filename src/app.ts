@@ -60,7 +60,7 @@ const buildDate = (components: { year: number, month: number, day: number }): st
   ].join('-')
 }
 
-const emptyFieldErr = 'This field cannot be empty'
+const emptyFieldErr = 'This field is required'
 const intFieldErr = 'A whole number is needed'
 
 const yearStatus = (input: string): InputStatus => {
