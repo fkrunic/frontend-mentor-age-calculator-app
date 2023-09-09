@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { content } from './content';
+import { content } from './app';
 import Display from './components/Display.vue'
 import Entry from './components/Entry.vue'
 
