@@ -47,6 +47,18 @@ const displayYears = (d: DisplayStatus): string => {
   return d.kind === 'none' ? '--' : `${d.delta.years}`
 }
 
+const titleYears = (d: DisplayStatus): string => {
+  return d.kind === 'some' && d.delta.years === 1 ? 'year' : 'years'
+}
+
+const titleMonths = (d: DisplayStatus): string => {
+  return d.kind === 'some' && d.delta.months === 1 ? 'month' : 'months'
+}
+
+const titleDays = (d: DisplayStatus): string => {
+  return d.kind === 'some' && d.delta.days === 1 ? 'day' : 'days'
+}
+
 </script>
 
 <template>
@@ -169,9 +181,9 @@ const displayYears = (d: DisplayStatus): string => {
         desktop:-mb-5
         desktop:p-0
         ">
-        <Display :title="'years'" :amount="displayYears(appState.display)"></Display>
-        <Display :title="'months'" :amount="displayMonths(appState.display)"></Display>
-        <Display :title="'days'" :amount="displayDays(appState.display)"></Display>
+        <Display :title="titleYears(appState.display)" :amount="displayYears(appState.display)"></Display>
+        <Display :title="titleMonths(appState.display)" :amount="displayMonths(appState.display)"></Display>
+        <Display :title="titleDays(appState.display)" :amount="displayDays(appState.display)"></Display>
       </div>
     </div>
   </div>
