@@ -2,6 +2,7 @@
 import { content } from '../content';
 import MobileDisplay from './MobileDisplay.vue'
 import MobileEntry from './MobileEntry.vue'
+import SubmitButton from './SubmitButton.vue';
 </script>
 
 <template>
@@ -35,23 +36,7 @@ import MobileEntry from './MobileEntry.vue'
 
     <!-- Divider -->
     <div class="relative w-full border-solid border-[1px] border-light-gray">
-
-      <!-- Icon -->
-      <div class="
-        absolute 
-        p-4 
-
-        left-[7.5rem] 
-        -top-[1.8rem] 
-        
-        bg-purple         
-        rounded-full
-
-        hover:bg-off-black
-        hover:cursor-pointer
-        ">
-        <img class="h-6 w-6" src="../assets/icon-arrow.svg">
-      </div>
+      <SubmitButton></SubmitButton>
     </div>
 
     <!-- Display -->
