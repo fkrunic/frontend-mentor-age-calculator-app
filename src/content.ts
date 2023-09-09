@@ -3,7 +3,11 @@ export type Display = '--' | number
 export type Content = 
   {
     inputs: Array<{title: string, placeholder: string}>,
-    displays: Array<{title: string, amount: Display}>
+    displays: {
+      year: Display,
+      month: Display, 
+      day: Display
+    }
   }
 
 export const content:Content = {
@@ -21,18 +25,9 @@ export const content:Content = {
       placeholder: 'YYYY'
     }
   ],
-  displays: [
-    {
-      title: 'years',
-      amount: '--'
-    },
-    {
-      title: 'months',
-      amount: '--'
-    },
-    {
-      title: 'days',
-      amount: '--'
-    }
-  ]
+  displays: {
+    year: '--',
+    month: '--',
+    day: '--'
+  }
 }

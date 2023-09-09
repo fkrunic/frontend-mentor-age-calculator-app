@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { content } from '../content';
+import MobileDisplay from './MobileDisplay.vue'
 
 </script>
 
@@ -58,10 +59,9 @@ import { content } from '../content';
 
     <!-- Display -->
     <div class="flex flex-col items-start pb-8">
-      <div class="flex flex-row gap-2" v-for="display of content.displays">
-        <p class="text-6xl italic text-purple font-bold">{{ display.amount }}</p>
-        <p class="text-6xl italic font-bold">{{ display.title }}</p>
-      </div>
+      <MobileDisplay :title="'years'" :amount="content.displays.year"></MobileDisplay>
+      <MobileDisplay :title="'months'" :amount="content.displays.month"></MobileDisplay>
+      <MobileDisplay :title="'days'" :amount="content.displays.day"></MobileDisplay>
     </div>
   </div>
 </template>
