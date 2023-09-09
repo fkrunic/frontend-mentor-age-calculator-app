@@ -37,7 +37,19 @@ import MobileEntry from './MobileEntry.vue'
     <div class="relative w-full border-solid border-[1px] border-light-gray">
 
       <!-- Icon -->
-      <div class="absolute left-[7.5rem] -top-[1.8rem] bg-purple p-4 rounded-full">
+      <div class="
+        absolute 
+        p-4 
+
+        left-[7.5rem] 
+        -top-[1.8rem] 
+        
+        bg-purple         
+        rounded-full
+
+        hover:bg-off-black
+        hover:cursor-pointer
+        ">
         <img class="h-6 w-6" src="../assets/icon-arrow.svg">
       </div>
     </div>

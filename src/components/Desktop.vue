@@ -33,7 +33,20 @@ import DesktopEntry from './DesktopEntry.vue'
       <div class="relative border-solid border-[1px] border-light-gray">
 
         <!-- Icon -->
-        <div class="absolute p-6 right-0 -top-12 bg-purple rounded-full">
+        <div class="
+          absolute 
+          
+          p-6 
+          
+          right-0 
+          -top-12 
+          
+          bg-purple 
+          rounded-full
+          
+          hover:bg-off-black
+          hover:cursor-pointer
+          ">
           <img class="w-12 h-12" src="../assets/icon-arrow.svg" alt="bla">
         </div>        
       </div>
