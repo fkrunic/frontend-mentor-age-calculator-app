@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { content } from '../content';
 import DesktopDisplay from './DesktopDisplay.vue'
+import DesktopEntry from './DesktopEntry.vue'
 </script>
 
 <template>
@@ -23,24 +24,9 @@ import DesktopDisplay from './DesktopDisplay.vue'
 
       <!-- Date Entry -->
       <div class="flex flex-row gap-8">
-        <div class="flex flex-col gap-2" v-for="entry of content.inputs">
-          <p class="text-sm tracking-[0.2rem] text-smokey-gray/80">{{ entry.title }}</p>
-          <input 
-            class="
-              w-40
-              p-4
-
-              text-3xl
-              outline-none  
-              
-              rounded-lg
-              border-solid 
-              border-[1px] 
-              border-light-gray
-              "
-            type="text" 
-            :placeholder="entry.placeholder">
-        </div>
+        <DesktopEntry :title="'DAY'" :placeholder="'DD'"></DesktopEntry>
+        <DesktopEntry :title="'MONTH'" :placeholder="'MM'"></DesktopEntry>
+        <DesktopEntry :title="'YYYY'" :placeholder="'YYYY'"></DesktopEntry>
       </div>
 
       <!-- Divider -->
