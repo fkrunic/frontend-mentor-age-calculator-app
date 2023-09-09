@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { content } from '../content';
 import MobileDisplay from './MobileDisplay.vue'
-
+import MobileEntry from './MobileEntry.vue'
 </script>
 
 <template>
@@ -28,24 +28,9 @@ import MobileDisplay from './MobileDisplay.vue'
 
     <!-- Date Entry -->
     <div class="flex flex-row justify-between w-full">
-      <div class="flex flex-col gap-1" v-for="entry of content.inputs">
-        <p class="text-xs tracking-[3px] text-smokey-gray">{{ entry.title }}</p>
-        <input 
-          class="
-            w-[5.5rem] 
-            p-3 
-            
-            rounded-lg 
-            outline-none 
-            border-solid 
-            border-[1px] 
-            
-            border-light-gray
-            text-lg
-            " 
-          type="text" 
-          :placeholder="entry.placeholder">
-      </div>
+      <MobileEntry :title="'DAY'" :placeholder="'DD'"></MobileEntry>
+      <MobileEntry :title="'MONTH'" :placeholder="'MM'"></MobileEntry>
+      <MobileEntry :title="'YEAR'" :placeholder="'YYYY'"></MobileEntry>
     </div>
 
     <!-- Divider -->
