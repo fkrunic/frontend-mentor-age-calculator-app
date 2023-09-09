@@ -60,7 +60,7 @@ const titleColor = (st: InputStatus): string => {
       >
       <p class="
         absolute 
-        w-28
+        w-24
 
         top-20
 

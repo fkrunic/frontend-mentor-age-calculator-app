@@ -153,7 +153,7 @@ export const determineState = (input: { day: string, month: string, year: string
       const currentDate = new Date()
       return {
         inputs: firstPassUpdate,
-        display: {
+        display: {  
           kind: 'some',
           delta: componentsBetween(currentDate, proposedDate)
         }
