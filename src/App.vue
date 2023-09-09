@@ -9,6 +9,10 @@ onMounted(() => {
   document.body.className = 'font-poppins bg-off-white'
 })
 
+const onInput = (input: string): void => {
+  console.log(`Captured: ${input}`)
+}
+
 </script>
 
 <template>
@@ -62,9 +66,9 @@ onMounted(() => {
         desktop:gap-8
         desktop:w-auto
         ">
-        <Entry :title="'DAY'" :placeholder="'DD'" :status="initialState.inputs.year"></Entry>
-        <Entry :title="'MONTH'" :placeholder="'MM'" :status="initialState.inputs.month"></Entry>
-        <Entry :title="'YEAR'" :placeholder="'YYYY'" :status="initialState.inputs.day"></Entry>
+        <Entry :title="'DAY'" :placeholder="'DD'" :status="initialState.inputs.year" @input="onInput"></Entry>
+        <Entry :title="'MONTH'" :placeholder="'MM'" :status="initialState.inputs.month" @input="onInput"></Entry>
+        <Entry :title="'YEAR'" :placeholder="'YYYY'" :status="initialState.inputs.day" @input="onInput"></Entry>
       </div>
 
       <!-- Divider -->

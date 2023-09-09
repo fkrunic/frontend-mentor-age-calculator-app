@@ -1,17 +1,27 @@
 <script setup lang="ts">
-import { Status } from '../app'
+import { InputStatus } from '../app'
 
 defineProps<{
   title: string, 
   placeholder: string,
-  status: Status
+  status: InputStatus
 }>()
 
-const inputBorder = (st: Status): string => {
+const emit = defineEmits<{
+  (event: 'input', content: string): void
+}>()
+
+const onInput = (event: Event): void => {
+  const input = (event.target as HTMLInputElement).value
+  console.log(`Emitting: ${input}`)
+  emit('input', input)
+}
+
+const inputBorder = (st: InputStatus): string => {
   return st.kind === 'invalid' ? 'border-soft-red' : 'border-light-gray'
 }
 
-const titleColor = (st: Status): string => {
+const titleColor = (st: InputStatus): string => {
   return st.kind === 'invalid' ? 'text-soft-red' : 'text-smokey-gray'
 }
 </script>
@@ -45,7 +55,9 @@ const titleColor = (st: Status): string => {
         " 
       type="text" 
       :class="inputBorder(status)"
-      :placeholder="placeholder">
+      :placeholder="placeholder"
+      @input="onInput"
+      >
       <p class="
         absolute 
         w-28
