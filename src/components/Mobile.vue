@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { content } from '../content';
-import MobileDisplay from './MobileDisplay.vue'
+import Display from './Display.vue'
 import Entry from './Entry.vue'
 import SubmitButton from './SubmitButton.vue';
 </script>
@@ -41,9 +41,9 @@ import SubmitButton from './SubmitButton.vue';
 
     <!-- Display -->
     <div class="flex flex-col items-start pb-8">
-      <MobileDisplay :title="'years'" :amount="content.displays.years"></MobileDisplay>
-      <MobileDisplay :title="'months'" :amount="content.displays.months"></MobileDisplay>
-      <MobileDisplay :title="'days'" :amount="content.displays.days"></MobileDisplay>
+      <Display :title="'years'" :amount="content.displays.years"></Display>
+      <Display :title="'months'" :amount="content.displays.months"></Display>
+      <Display :title="'days'" :amount="content.displays.days"></Display>
     </div>
   </div>
 </template>

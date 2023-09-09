@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { content } from '../content';
-import DesktopDisplay from './DesktopDisplay.vue'
+import Display from './Display.vue'
 import Entry from './Entry.vue'
 import SubmitButton from './SubmitButton.vue';
 </script>
@@ -36,10 +36,10 @@ import SubmitButton from './SubmitButton.vue';
       </div>
 
       <!-- Display -->
-      <div class="flex flex-col -mb-5">
-        <DesktopDisplay :title="'years'" :amount="content.displays.years"></DesktopDisplay>
-        <DesktopDisplay :title="'months'" :amount="content.displays.months"></DesktopDisplay>
-        <DesktopDisplay :title="'days'" :amount="content.displays.days"></DesktopDisplay>
+      <div class="flex flex-col gap-12 mt-10 -mb-5">
+        <Display :title="'years'" :amount="content.displays.years"></Display>
+        <Display :title="'months'" :amount="content.displays.months"></Display>
+        <Display :title="'days'" :amount="content.displays.days"></Display>
       </div>
     </div>
   </div>
