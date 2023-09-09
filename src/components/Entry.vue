@@ -1,7 +1,5 @@
 <script setup lang="ts">
-type Status
-  = { kind: 'valid' }
-  | { kind: 'invalid', err: string }
+import { Status } from '../app'
 
 defineProps<{
   title: string, 

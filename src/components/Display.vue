@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Display } from '../content';
+import { Display } from '../app';
 defineProps<{
   title: string, 
   amount: Display

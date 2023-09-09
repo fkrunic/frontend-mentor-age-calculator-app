@@ -32,6 +32,10 @@ export const content:Content = {
   }
 }
 
+export type Status
+  = { kind: 'valid' }
+  | { kind: 'invalid', err: string }
+
 const isValidYear = (year: number): boolean => {
   const currentYear = new Date().getFullYear()
   return year <= currentYear
