@@ -26,7 +26,7 @@ import { content } from '../content';
           <p class="text-sm tracking-[0.2rem] text-smokey-gray/80">{{ entry.title }}</p>
           <input 
             class="
-              w-40 
+              w-40
               p-4
 
               text-3xl

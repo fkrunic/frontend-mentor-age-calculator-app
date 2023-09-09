@@ -1,4 +1,12 @@
-export const content = {
+export type Display = '--' | number
+
+export type Content = 
+  {
+    inputs: Array<{title: string, placeholder: string}>,
+    displays: Array<{title: string, amount: Display}>
+  }
+
+export const content:Content = {
   inputs: [
     {
       title: 'DAY',
@@ -16,15 +24,15 @@ export const content = {
   displays: [
     {
       title: 'years',
-      amount: 38
+      amount: '--'
     },
     {
       title: 'months',
-      amount: 3
+      amount: '--'
     },
     {
       title: 'days',
-      amount: 26
+      amount: '--'
     }
   ]
 }
