@@ -94,9 +94,9 @@ const isValidDate = (components: {year: number, month: number, day: number}): bo
         desktop:gap-8
         desktop:w-auto
         ">
-        <Entry :title="'DAY'" :placeholder="'DD'"></Entry>
-        <Entry :title="'MONTH'" :placeholder="'MM'"></Entry>
-        <Entry :title="'YEAR'" :placeholder="'YYYY'"></Entry>
+        <Entry :title="'DAY'" :placeholder="'DD'" :status="{ kind: 'invalid', err: 'This field is required' }"></Entry>
+        <Entry :title="'MONTH'" :placeholder="'MM'" :status="{ kind: 'invalid', err: 'This field is required' }"></Entry>
+        <Entry :title="'YEAR'" :placeholder="'YYYY'" :status="{ kind: 'invalid', err: 'This field is required' }"></Entry>
       </div>
 
       <!-- Divider -->

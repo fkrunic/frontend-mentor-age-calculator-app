@@ -16,7 +16,8 @@ export default {
       'off-white': 'hsl(0, 0%, 94%)',
       'light-gray': 'hsl(0, 0%, 86%)',
       'smokey-gray': 'hsl(0, 1%, 44%)',
-      'off-black': 'hsl(0, 0%, 8%)'
+      'off-black': 'hsl(0, 0%, 8%)',
+      'soft-red': 'hsl(5, 100%, 65%)'
     },
     fontFamily: {
       poppins: 'Poppins, sans-serif'
