@@ -1,6 +1,6 @@
 import { differenceInDays, differenceInMonths, differenceInYears } from 'date-fns'
 
-export type Display
+export type DisplayStatus
   = { kind: 'none' }
   | { kind: 'some', delta: Delta }
 
@@ -21,7 +21,7 @@ interface State {
     month: InputStatus,
     day: InputStatus
   },
-  display: Display
+  display: DisplayStatus
 }
 
 export const initialState: State = {
@@ -108,7 +108,7 @@ const dayStatus = (input: string): InputStatus => {
   }
 }
 
-const determineState = (input: { day: string, month: string, year: string }): State => {
+export const determineState = (input: { day: string, month: string, year: string }): State => {
   const firstPassUpdate = {
     year: yearStatus(input.year),
     month: monthStatus(input.month),

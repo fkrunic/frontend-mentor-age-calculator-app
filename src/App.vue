@@ -1,16 +1,50 @@
 <script setup lang="ts">
-import { initialState } from './app';
+import { initialState, determineState, DisplayStatus } from './app';
 import Display from './components/Display.vue'
 import Entry from './components/Entry.vue'
 
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 
 onMounted(() => {
   document.body.className = 'font-poppins bg-off-white'
 })
 
-const onInput = (input: string): void => {
-  console.log(`Captured: ${input}`)
+const appState = ref(initialState)
+
+const yearInput = ref('')
+const monthInput = ref('')
+const dayInput = ref('')
+
+const onYearInput = (input: string): void => {
+  yearInput.value = input
+}
+
+const onMonthInput = (input: string): void => {
+  monthInput.value = input
+}
+
+const onDayInput = (input: string): void => {
+  dayInput.value = input
+}
+
+const onSubmit = () => {
+  appState.value = determineState({
+    year: yearInput.value,
+    month: monthInput.value,
+    day: dayInput.value
+  })
+}
+
+const displayDays = (d: DisplayStatus): string => {
+  return d.kind === 'none' ? '--' : `${d.delta.days}`
+}
+
+const displayMonths = (d: DisplayStatus): string => {
+  return d.kind === 'none' ? '--' : `${d.delta.months}`
+}
+
+const displayYears = (d: DisplayStatus): string => {
+  return d.kind === 'none' ? '--' : `${d.delta.years}`
 }
 
 </script>
@@ -66,9 +100,24 @@ const onInput = (input: string): void => {
         desktop:gap-8
         desktop:w-auto
         ">
-        <Entry :title="'DAY'" :placeholder="'DD'" :status="initialState.inputs.year" @input="onInput"></Entry>
-        <Entry :title="'MONTH'" :placeholder="'MM'" :status="initialState.inputs.month" @input="onInput"></Entry>
-        <Entry :title="'YEAR'" :placeholder="'YYYY'" :status="initialState.inputs.day" @input="onInput"></Entry>
+        <Entry 
+          :title="'DAY'" 
+          :placeholder="'DD'" 
+          :status="appState.inputs.day" 
+          @input="onDayInput">
+        </Entry>
+        <Entry 
+          :title="'MONTH'" 
+          :placeholder="'MM'" 
+          :status="appState.inputs.month" 
+          @input="onMonthInput">
+        </Entry>
+        <Entry 
+          :title="'YEAR'" 
+          :placeholder="'YYYY'" 
+          :status="appState.inputs.year" 
+          @input="onYearInput">
+        </Entry>
       </div>
 
       <!-- Divider -->
@@ -98,7 +147,9 @@ const onInput = (input: string): void => {
 
           hover:bg-off-black
           hover:cursor-pointer
-          ">
+          "
+          @click="onSubmit"
+          >
           <img class="w-6 h-6 desktop:w-12 desktop:h-12" src="./assets/icon-arrow.svg">
         </div>
       </div>
@@ -116,9 +167,9 @@ const onInput = (input: string): void => {
         desktop:-mb-5
         desktop:p-0
         ">
-        <Display :title="'years'" :amount="initialState.display.kind === 'none' ? '--' : initialState.display.delta.years"></Display>
-        <Display :title="'months'" :amount="initialState.display.kind === 'none' ? '--' : initialState.display.delta.months"></Display>
-        <Display :title="'days'" :amount="initialState.display.kind === 'none' ? '--' : initialState.display.delta.days"></Display>
+        <Display :title="'years'" :amount="displayYears(appState.display)"></Display>
+        <Display :title="'months'" :amount="displayMonths(appState.display)"></Display>
+        <Display :title="'days'" :amount="displayDays(appState.display)"></Display>
       </div>
     </div>
   </div>
