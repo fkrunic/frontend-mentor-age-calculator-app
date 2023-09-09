@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { content } from '../content';
+import DesktopDisplay from './DesktopDisplay.vue'
 </script>
 
 <template>
@@ -53,12 +54,10 @@ import { content } from '../content';
 
       <!-- Display -->
       <div class="flex flex-col -mb-5">
-        <div class="flex flex-row gap-4 -mt-10 text-[80pt] italic font-bold" v-for="entry of content.displays">
-          <p class="text-purple">{{ entry.amount }}</p>
-          <p>{{ entry.title }}</p>
-        </div>
+        <DesktopDisplay :title="'years'" :amount="content.displays.year"></DesktopDisplay>
+        <DesktopDisplay :title="'months'" :amount="content.displays.month"></DesktopDisplay>
+        <DesktopDisplay :title="'days'" :amount="content.displays.day"></DesktopDisplay>
       </div>
-
     </div>
   </div>
 </template>
